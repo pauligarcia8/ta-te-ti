@@ -53,10 +53,9 @@ const Board = () => {
 
     const isBoardFull = board.every((box) => box.value !== null);
     if (isBoardFull) {
-        setTie(true);
+      setTie(true);
     }
   };
-
 
   useEffect(() => {
     checkWin();
@@ -72,20 +71,15 @@ const Board = () => {
 
   return (
     <>
-      <div className="h-26 flex flex-col items-center justify-center">
+      <div className="h-10 flex flex-col items-center justify-center">
         {(hasWin || tie) && (
           <Subtitle>
             {hasWin && `WON PARTICIPANT "${symbol}"`}
             {tie && `IT'S A TIE!`}
           </Subtitle>
         )}
-        <Button
-          showButton={showButton}
-          resetBoard={resetBoard}
-          innerText="START NEW GAME"
-        />
       </div>
-      <div className="w-[500px] h-[500px] grid grid-cols-3 my-6">
+      <div className="w-[300px] h-[300px] md:w-[500px] md:h-[500px] grid grid-cols-3 my-6">
         {board.map((box, idx) => (
           <SymbolButton
             key={idx}
@@ -96,6 +90,11 @@ const Board = () => {
           />
         ))}
       </div>
+      <Button
+        showButton={showButton}
+        resetBoard={resetBoard}
+        innerText="START NEW GAME"
+      />
     </>
   );
 };

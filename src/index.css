@@ -1,1 +1,19 @@
+@import url("https://fonts.googleapis.com/css2?family=Saira+Stencil+One&display=swap");
 @import "tailwindcss";
+
+.saira-stencil-one-regular {
+  font-family: "Saira Stencil One", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+@theme {
+  --font-saira: "Saira Stencil One", sans-serif;
+}
+
+@layer utilities {
+    .text-shadow {
+      text-shadow: 3px 3px theme('colors.cyan.400');
+    }
+  }
+  
